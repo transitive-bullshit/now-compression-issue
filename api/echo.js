@@ -1,6 +1,6 @@
 'use strict'
 
-const inflate = require('inflation')
+const inflate = require('../lib/inflate')
 const raw = require('raw-body')
 
 // uncompressed body limit size
