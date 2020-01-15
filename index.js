@@ -12,7 +12,7 @@ const compress =
 
 module.exports = async function main() {
   // const bodyRaw = JSON.stringify(require('./out.json'))
-  const bodyRaw = JSON.stringify({ name: 'a'.repeat(1000000) })
+  const bodyRaw = JSON.stringify({ name: 'a'.repeat(4500000) })
   const body = process.env.COMPRESSION
     ? await compress(Buffer.from(bodyRaw))
     : bodyRaw
@@ -28,6 +28,7 @@ module.exports = async function main() {
     headers['content-encoding'] = process.env.COMPRESSION
   }
 
+  // hello-world
   const res = await got.post(`${process.env.NOW_URL}`, {
     body,
     headers
