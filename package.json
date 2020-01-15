@@ -1,0 +1,28 @@
+{
+  "name": "now-compression-issue",
+  "private": true,
+  "author": "Saasify <dev@saasify.sh>",
+  "repository": "saasify-sh/now-compression-issue",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12"
+  },
+  "devDependencies": {
+    "ava": "^2.4.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "prettier": "^1.19.1"
+  },
+  "dependencies": {
+    "got": "^10.2.2",
+    "inflation": "^2.0.0",
+    "raw-body": "^2.4.1"
+  }
+}
