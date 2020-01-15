@@ -11,7 +11,8 @@ const compress =
     : util.promisify(zlib.brotliCompress.bind(zlib))
 
 module.exports = async function main() {
-  const bodyRaw = JSON.stringify(require('./example.json'))
+  // const bodyRaw = JSON.stringify(require('./out.json'))
+  const bodyRaw = JSON.stringify({ name: 'a'.repeat(1000000) })
   const body = process.env.COMPRESSION
     ? await compress(Buffer.from(bodyRaw))
     : bodyRaw
@@ -27,10 +28,9 @@ module.exports = async function main() {
     headers['content-encoding'] = process.env.COMPRESSION
   }
 
-  const res = await got.post(`${process.env.NOW_URL}/api/echo`, {
+  const res = await got.post(`${process.env.NOW_URL}`, {
     body,
-    headers,
-    responseType: 'json'
+    headers
   })
 
   return res
@@ -39,7 +39,7 @@ module.exports = async function main() {
 module
   .exports()
   .then((output) => {
-    console.log(output)
+    // console.log(output)
     process.exit(0)
   })
   .catch((err) => {
