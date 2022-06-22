@@ -21,7 +21,7 @@
     "prettier": "^1.19.1"
   },
   "dependencies": {
-    "got": "^10.2.2",
+    "got": "^11.8.5",
     "inflation": "^2.0.0",
     "raw-body": "^2.4.1"
   }
